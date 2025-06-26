@@ -31,7 +31,7 @@ const VidalyticsVideo = () => {
     // Start observing the document with the configured parameters
     observer.observe(document.documentElement, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
 
     // Also check periodically as a fallback
@@ -56,12 +56,12 @@ const VidalyticsVideo = () => {
       if (videoContainerRef.current) {
         videoContainerRef.current.innerHTML = '';
       }
-      
+
       // Add a small delay to ensure the DOM is ready
       const timer = setTimeout(() => {
         // @ts-ignore - We've already checked that Vidalytics exists
         const player = new window.Vidalytics.Embed();
-        player.run('vidalytics_embed_ftyvsSZ_3zHHYXRU');
+        player.run('vidalytics_embed_T7vlVpnb4Brl5AwG');
       }, 100);
 
       return () => clearTimeout(timer);
@@ -71,7 +71,7 @@ const VidalyticsVideo = () => {
   }, [scriptReady]);
 
   return (
-    <div className="w-full max-w-[1000px] mx-auto relative rounded-lg overflow-hidden shadow-md bg-black aspect-video -mt-2">
+    <div className="w-full max-w-[1000px] mx-auto relative rounded-lg overflow-hidden shadow-md bg-black aspect-video">
       {/* Load the Vidalytics loader script */}
       <Script
         id="vidalytics-loader"
@@ -103,14 +103,14 @@ const VidalyticsVideo = () => {
                         window.dispatchEvent(new Event('vidalytics:loaded'));
                     });
                 });
-            })(window, document, 'Vidalytics', 'vidalytics_embed_ftyvsSZ_3zHHYXRU', 'https://quick.vidalytics.com/embeds/IgKBDqAD/ftyvsSZ_3zHHYXRU/');
+            })(window, document, 'Vidalytics', 'vidalytics_embed_T7vlVpnb4Brl5AwG', 'https://quick.vidalytics.com/embeds/IgKBDqAD/T7vlVpnb4Brl5AwG/');
           `,
         }}
       />
-      
+
       {/* Video container */}
-      <div 
-        id="vidalytics_embed_ftyvsSZ_3zHHYXRU"
+      <div
+        id="vidalytics_embed_T7vlVpnb4Brl5AwG"
         ref={videoContainerRef}
         className="relative w-full h-full min-h-[300px]"
       />

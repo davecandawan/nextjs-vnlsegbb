@@ -9,8 +9,7 @@ const nextConfig = {
     fullUrl: true,
   },
   experimental: {
-    reactRefresh: true,
-    esmExternals: 'loose',
+    // Next.js 15+ handles ESM externals automatically
   },
   // Add webpack configuration for path aliases
   webpack: (config) => {
