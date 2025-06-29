@@ -32,8 +32,8 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ imgUrl, title, text, imgWid
             />
           </div>
         </div>
-        <h3 className="text-lg font-bold mt-4 mb-2 text-gray-800 whitespace-nowrap">{title}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{text}</p>
+        <h3 className="text-base font-bold mt-4 mb-2 text-gray-800 whitespace-nowrap">{title}</h3>
+        <p className="text-gray-600 !text-[14px] md:!text-[16px] leading-relaxed">{text}</p>
       </div>
     </div>
   );
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center text-gray-600 py-4">
+        <div className="text-center text-gray-600 py-4 text-sm">
           © <b>2025 VNSH.com</b> All Rights Reserved.
         </div>
         <FooterLinks loadInfo={loadInfo} />

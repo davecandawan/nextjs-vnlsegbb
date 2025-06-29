@@ -18,14 +18,14 @@ const FooterModal: React.FC<FooterModalProps> = ({ modalId, closeModal }) => {
             <div className="border-b border-gray-200 pb-4 mb-4">
               <h2 className="text-2xl font-bold text-gray-800">Terms &amp; Disclaimer</h2>
             </div>
-            <div className="prose max-w-none">
-              <p className="font-semibold">Effective Date: January 1st, 2019</p>
-              <p className="mb-4">
+            <div className="prose max-w-none text-base">
+              <p className="font-semibold m-0 mb-2">Effective Date: January 1st, 2019</p>
+              <p className="mb-4 text-gray-700">
                 To review material modifications and their effective dates scroll to the bottom of
                 the page.
               </p>
-              <div className="space-y-4 text-gray-700">
-                <ol className="list-decimal pl-5 space-y-3">
+              <div className="text-gray-700">
+                <ol className="list-decimal pl-5 space-y-3 m-0">
                   <li>
                     <span className="font-semibold">Parties.</span> The parties to these Terms of
                     Use are you, and the owner of this VNSH.com website business, Sicuro Brands LLC

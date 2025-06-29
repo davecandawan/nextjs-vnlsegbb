@@ -33,7 +33,7 @@
   
   body {
     @apply bg-white text-gray-900 antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -50,8 +50,48 @@
     margin: 0 0 1rem;
   }
 
-  p {
-    margin: 0 0 1rem;
+  /* Global paragraph and list item styles - excludes FooterModal and footer content */
+  :not(.prose):not(footer) > p,
+  :not(.prose):not(footer) > ul > li,
+  :not(.prose):not(footer) > ol > li,
+  :not(.prose):not(footer) p:not([class*="text-"]),
+  :not(.prose):not(footer) li:not([class*="text-"]) {
+    @apply text-xl md:text-[22px] leading-relaxed;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Reset margin for last child in lists */
+  :not(.prose) > ul > li:last-child,
+  :not(.prose) > ol > li:last-child,
+  :not(.prose) li:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Add some padding to lists */
+  :not(.prose) > ul,
+  :not(.prose) > ol,
+  :not(.prose) ul,
+  :not(.prose) ol {
+    @apply pl-6 my-4;
+  }
+  
+  /* Reset styles for FooterModal content */
+  .prose,
+  .prose p,
+  .prose li,
+  .prose div {
+    @apply text-base !important;
+    line-height: 1.5 !important;
+    margin: 0 0 1rem !important;
+  }
+  
+  .prose ul,
+  .prose ol {
+    @apply pl-5 my-2 !important;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-bold !important;
   }
 
   a {
