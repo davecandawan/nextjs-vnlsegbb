@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 interface FaqItemProps {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
   isOpen: boolean;
   onClick: () => void;
 }
 
 interface FaqData {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const FaqItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onClick }) => {
@@ -37,10 +37,14 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onClick }) 
         </span>
       </div>
       <div
-        className={`bg-gray-50 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 py-4 border-t border-gray-200' : 'max-h-0'}`}
+        className={`bg-[#f2f2f2] overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 py-4 border-t border-gray-200' : 'max-h-0'}`}
         aria-hidden={!isOpen}
       >
-        <p className="px-4 text-gray-800 leading-relaxed text-lg">{answer}</p>
+        {typeof answer === 'string' ? (
+          <p className="px-4 text-gray-800 leading-relaxed text-lg">{answer}</p>
+        ) : (
+          <div className="px-4 text-gray-800 leading-relaxed text-lg space-y-2">{answer}</div>
+        )}
       </div>
     </div>
   );
@@ -48,36 +52,40 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onClick }) 
 
 const faqData: FaqData[] = [
   {
-    question: 'Q: Does this come in right-handed and left-handed configurations?',
-    answer: 'A: No, the VNSH holster is a true ambidextrous holster.',
-  },
-  {
-    question: 'Q: Will This Work With My Laser Sights or a Mounted Light?',
-    answer: 'A: Depending on the light or sight you are using, it may fit.',
-  },
-  {
-    question: 'Q: Will this work for my revolver?',
-    answer: 'A: The holster will fit most compact revolvers.',
-  },
-  {
-    question: 'Q: Do I Need a Belt? How Does It Connect Around The Waist?',
+    question: 'Q: What Guns Work With This System?',
     answer:
-      'A: NO! The holster has a built in Waist Band. It secures around your waist with built-in, high quality molded velcro. You do not need a belt... or anything else for that matter. You could even wear it naked if you wanted too. ;)',
+      'A: Right now, the Laser Strike is available in the following calibers: 9mm, .45mm, .40 S&W, and .380 ACP. If you don’t see your caliber, just know we plan on adding more very soon!',
   },
   {
-    question: "Q: My Semi-automatic Isn't Listed Above. Will it fit?",
+    question: 'Q: Does Lack of Recoil Make This Less Effective Than Live Rounds?',
     answer:
-      'A: Yes, all semi-automatic firearms fit. In fact, that is what our design is specifically set for. This is the only holster on the market that will fit any semi-automatic firearm. The exception is the C.O.R.E. series from Smith and Wesson.',
+      'A: No! This is a huge myth. The effectiveness of dry fire training lies in the fact that recoil isn’t connected to the accuracy of your shot. Since the gun doesn’t kick until the bullet has exited the barrel, your precision and aim alone are what dictate accuracy.',
   },
   {
-    question: 'Q: Will My Magazines Fit in the Pouches?',
+    question: 'Q: How Much Space Do I Need to Set It Up?',
     answer:
-      'A: Yes, all magazines for all semi-automatics will fit in any or all of the two magazine pouches.',
+      'A: The Laser Strike is intended for use at a minimum of 3 yards, and the laser can be shot up to 15-20 yards accurately. So it’s easy to use in tight spaces or at longer distances. Keep in mind though, it’s designed for indoor use.',
+  },
+  {
+    question: 'Q: Will the App Work On My Phone?',
+    answer:
+      'A: Yes, the smartphone app needed to use the Laser Strike System is available for all Apple and Android phones.',
   },
   {
     question: 'Q: Does this holster work with slide-mounted optics (Red dots, etc)?',
-    answer:
-      "A: In most cases no, though some smaller, sub-compact weapons may work with a slide-mounted optic. If you want to try the holster out with your optic and it doesn't work, please remember we offer an any-reason return policy for the first 60-days you own the holster.",
+    answer: (
+      <div>
+        <p>
+          A: It depends, if you are using a single and double action weapon you can manually reset
+          the hammer without the need to rerack the slide for a reset. Internally hammer-fired guns
+          like Glocks will require re-racking between each shot.
+        </p>
+        <p>
+          If you understand that proper dryfire is not affected with re-racking, this is a non-issue
+          and won't be creating any bad habits.
+        </p>
+      </div>
+    ),
   },
 ];
 
