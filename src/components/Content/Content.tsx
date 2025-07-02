@@ -66,7 +66,7 @@ const Content: React.FC<ContentProps> = ({
               <span className="bg-[#ff0] py-1 italic">(From the Comfort of Your Living Room!)</span>
             </div>
           </div>
-          <div className="space-y-4 text-xl font-medium leading-tight md:text-2xl">
+          <div className="space-y-4 text-xl leading-tight md:text-2xl">
             <p>Question for you…</p>
             <p>
               Wouldn't you love to know that{' '}
