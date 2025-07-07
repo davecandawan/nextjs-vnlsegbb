@@ -1,7 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 
 const PackageSelection: React.FC = () => {
+  const searchParams = useSearchParams();
+
+  const getCheckoutUrl = (baseUrl: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete('redirect');
+    const queryString = params.toString();
+    return `${baseUrl}${queryString ? `?${queryString}` : ''}`;
+  };
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="flex flex-wrap justify-center items-center gap-6 mt-8">
@@ -9,7 +18,7 @@ const PackageSelection: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 w-[320px] flex flex-col order-3 lg:order-1">
           <div className="relative w-full h-auto overflow-hidden bg-white aspect-square">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/LSETStarterMobile2.webp"
+              src="/contentimages/LSETStarterMobile2.webp"
               alt="Starter Package"
               fill
               className="object-contain object-top"
@@ -26,7 +35,7 @@ const PackageSelection: React.FC = () => {
 
             <div className="mt-auto">
               <a
-                href="https://secure.vnsh.com/vnlsegbb/starter-checkout"
+                href={getCheckoutUrl('https://secure.vnsh.com/vnlsegbb/starter-checkout')}
                 target="_self"
                 rel="noopener noreferrer"
                 className="block w-full"
@@ -34,7 +43,7 @@ const PackageSelection: React.FC = () => {
                 <div className="relative w-full h-16 group">
                   <div className="relative w-full h-full transition-all duration-300 group-hover:scale-105 group-hover:opacity-90">
                     <Image
-                      src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/GBB_Add_to_cart.webp"
+                      src="/contentimages/GBB_Add_to_cart.webp"
                       alt="Add to Cart"
                       fill
                       className="object-contain"
@@ -47,7 +56,7 @@ const PackageSelection: React.FC = () => {
               <div className="mt-4 flex justify-center">
                 <div className="relative w-3/5 h-10">
                   <Image
-                    src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/GBB_cardsMobile.webp"
+                    src="/contentimages/GBB_cardsMobile.webp"
                     alt="Payment Methods"
                     fill
                     className="object-contain"
@@ -63,7 +72,7 @@ const PackageSelection: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 w-[320px] flex flex-col order-1 lg:order-2">
           <div className="relative w-full h-96 overflow-hidden bg-gray-100">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/LSETUltimateMobile2.webp"
+              src="/contentimages/LSETUltimateMobile2.webp"
               alt="Ultimate Package"
               fill
               className="object-contain -mt-2.5 md:-mt-3"
@@ -97,7 +106,7 @@ const PackageSelection: React.FC = () => {
 
             <div className="mt-auto">
               <a
-                href="https://secure.vnsh.com/vnlsegbb/ultimate-checkout"
+                href={getCheckoutUrl('https://secure.vnsh.com/vnlsegbb/ultimate-checkout')}
                 target="_self"
                 rel="noopener noreferrer"
                 className="block w-full"
@@ -105,7 +114,7 @@ const PackageSelection: React.FC = () => {
                 <div className="relative w-full h-16 group">
                   <div className="relative w-full h-full transition-all duration-300 group-hover:scale-105 group-hover:opacity-90">
                     <Image
-                      src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/GBB_Add_to_cart.webp"
+                      src="/contentimages/GBB_Add_to_cart.webp"
                       alt="Add to Cart"
                       fill
                       className="object-contain"
@@ -118,7 +127,7 @@ const PackageSelection: React.FC = () => {
               <div className="mt-4 flex justify-center">
                 <div className="relative w-3/5 h-10">
                   <Image
-                    src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/GBB_cardsMobile.webp"
+                    src="/contentimages/GBB_cardsMobile.webp"
                     alt="Payment Methods"
                     fill
                     className="object-contain"
@@ -134,7 +143,7 @@ const PackageSelection: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 w-[320px] flex flex-col order-2">
           <div className="relative w-full h-96 overflow-hidden bg-white">
             <Image
-              src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/LSETEnhancedMobile2.webp"
+              src="/contentimages/LSETEnhancedMobile2.webp"
               alt="Enhanced Package"
               fill
               className="object-contain -mt-4 md:-mt-4"
@@ -167,7 +176,7 @@ const PackageSelection: React.FC = () => {
 
             <div className="mt-auto">
               <a
-                href="https://secure.vnsh.com/vnlsegbb/advance-checkout"
+                href={getCheckoutUrl('https://secure.vnsh.com/vnlsegbb/advance-checkout')}
                 target="_self"
                 rel="noopener noreferrer"
                 className="block w-full"
@@ -175,7 +184,7 @@ const PackageSelection: React.FC = () => {
                 <div className="relative w-full h-16 group">
                   <div className="relative w-full h-full transition-all duration-300 group-hover:scale-105 group-hover:opacity-90">
                     <Image
-                      src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/GBB_Add_to_cart.webp"
+                      src="/contentimages/GBB_Add_to_cart.webp"
                       alt="Add to Cart"
                       fill
                       className="object-contain"
@@ -188,7 +197,7 @@ const PackageSelection: React.FC = () => {
               <div className="mt-4 flex justify-center">
                 <div className="relative w-3/5 h-10">
                   <Image
-                    src="https://cdn.shopify.com/s/files/1/0670/4948/8684/files/GBB_cardsMobile.webp"
+                    src="/contentimages/GBB_cardsMobile.webp"
                     alt="Payment Methods"
                     fill
                     className="object-contain"
