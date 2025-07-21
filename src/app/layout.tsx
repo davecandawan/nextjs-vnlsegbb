@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { inter, primaryFont } from './fonts';
 import '@/styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import '@/styles/fonts.css';
 
 export const metadata: Metadata = {
   title: 'VNSH Enhanced Laser Strike + Virtual Steel Target!',
@@ -34,8 +33,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${primaryFont.variable} ${inter.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/stratumno1-black.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="font-sans">
+        {children}
+      </body>
     </html>
   );
 }
