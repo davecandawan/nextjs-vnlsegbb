@@ -61,7 +61,7 @@ const Content: React.FC = () => {
                 116 Reviews
               </span>
             </div>
-            <div className="bg-[#f7f2f2] py-2 sm:py-2 sm:px-6 inline-block text-[13px] sm:text-2xl whitespace-nowrap overflow-x-auto w-full sm:w-auto">
+            <div className="bg-[#f7f2f2] py-2 sm:py-2 sm:px-2 inline-block text-[13px] sm:text-2xl whitespace-nowrap overflow-x-auto w-full sm:w-auto">
               <span className="inline-flex items-center">
                 <span className="mr-1">✨</span>
                 <strong>
@@ -73,7 +73,7 @@ const Content: React.FC = () => {
             </div>
           </div>
           {/* Testimonial Section */}
-          <div className="max-w-4xl mx-auto mb-8 p-4 bg-[#f9f9f9] rounded-lg shadow-sm border border-[#ddd]">
+          <div className="max-w-4xl mx-auto mb-8 p-2 bg-[#f9f9f9] rounded-lg shadow-sm border border-[#ddd]">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
               <div className="relative">
                 <div className="relative w-14 h-14 sm:w-16 sm:h-16">
@@ -91,18 +91,18 @@ const Content: React.FC = () => {
               </div>
               <div className="text-center sm:text-left min-w-[120px]">
                 <div className="font-bold">Don T.</div>
-                <div className="text-[13px] text-gray-600 mb-2">Verified Buyer</div>
+                <div className="text-[13px] text-[#555] mb-2">Verified Buyer</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-lg font-semibold mb-2">Top Review</div>
+                <div className="text-lg font-semibold mb-2 font-inter">Top Review</div>
 
                 <div className="text-yellow-400 text-xl">★★★★★</div>
 
-                <span className="font-semibold text-lg mb-2">
+                <span className="font-semibold text-[16px] mb-2 font-inter">
                   I've already saved $100s in ammo and range time!
                 </span>
 
-                <span className="text-[15px] text-gray-600 leading-tight block">
+                <span className="text-[14px] text-[#555] leading-tight block font-inter">
                   "It's a fantastic tool for improving trigger control. The setup is simple and
                   helps refine each shot. It's a cost-effective way to train without wasting ammo.
                   Highly recommended for anyone serious about honing their shooting skills!"
